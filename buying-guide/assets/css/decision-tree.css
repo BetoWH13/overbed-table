@@ -118,7 +118,100 @@
 }
 
 .results-section {
-    padding: 3rem 0;
+    padding: 4rem 0;
+    background: var(--light-gray);
+}
+
+.recommendation-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.recommendation-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.recommendation-card .description {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.features-list {
+    background: var(--light-gray);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.features-list h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.features-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-list li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.features-list li::before {
+    content: "✓";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.cta-button.primary {
+    display: block;
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    margin: 1.5rem 0;
+}
+
+.cta-button.primary:hover {
+    background: var(--secondary-color);
+}
+
+.cta-button .arrow {
+    margin-left: 0.5rem;
+}
+
+.disclaimer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 1rem;
 }
 
 .recommendations {
@@ -126,13 +219,6 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
-}
-
-.recommendation-card {
-    background: var(--white);
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .recommendation-card img {
@@ -341,6 +427,7 @@
     align-items: center;
     gap: 1rem;
     transition: background-color 0.3s ease;
+    margin: 1.5rem 0;
 }
 
 .btn-amazon:hover {
@@ -381,5 +468,23 @@
 
     .scenario-card {
         margin-bottom: 1rem;
+    }
+
+    .recommendation-card {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .recommendation-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .price {
+        font-size: 1.8rem;
+    }
+
+    .cta-button.primary {
+        font-size: 1.1rem;
+        padding: 0.8rem 1.5rem;
     }
 }

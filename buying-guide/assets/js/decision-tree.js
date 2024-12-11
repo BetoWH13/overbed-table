@@ -5,186 +5,107 @@ const questions = [
         title: 'What is your primary use for the overbed table?',
         options: [
             { id: 'medical', text: 'Medical Care / Recovery', icon: '🏥' },
-            { id: 'work', text: 'Work / Study', icon: '💻' },
             { id: 'elderly', text: 'Elderly Care', icon: '👴' },
-            { id: 'general', text: 'General Use', icon: '🏠' }
-        ]
-    },
-    {
-        id: 'weight-capacity',
-        title: 'What weight capacity do you need?',
-        options: [
-            { id: 'standard', text: 'Standard (up to 50 lbs)', icon: '⚖️' },
-            { id: 'heavy', text: 'Heavy Duty (up to 100 lbs)', icon: '⚖️⚖️' },
-            { id: 'bariatric', text: 'Bariatric (100+ lbs)', icon: '⚖️⚖️⚖️' }
-        ]
-    },
-    {
-        id: 'stability',
-        title: 'What type of stability features do you need?',
-        options: [
-            { id: 'basic', text: 'Basic (Standard Wheels)', icon: '🔄' },
-            { id: 'locking', text: 'Locking Wheels', icon: '🔒' },
-            { id: 'advanced', text: 'Advanced (Auto-Locking)', icon: '🔐' }
+            { id: 'work', text: 'Work / Study', icon: '💻' }
         ]
     },
     {
         id: 'features',
-        title: 'Which additional features are important to you?',
+        title: 'Which feature is most important to you?',
         options: [
-            { id: 'height', text: 'Height Adjustment', icon: '📏' },
-            { id: 'tilt', text: 'Tilt Function', icon: '📐' },
-            { id: 'side-guards', text: 'Side Guards', icon: '🛡️' },
+            { id: 'height-tilt', text: 'Height & Tilt Adjustment', icon: '📐' },
+            { id: 'stability', text: 'Maximum Stability', icon: '🔒' },
             { id: 'storage', text: 'Storage Space', icon: '📦' }
-        ],
-        multiple: true
+        ]
     },
     {
         id: 'budget',
         title: 'What is your budget range?',
         options: [
-            { id: 'economy', text: 'Economy ($50-$100)', icon: '💰' },
-            { id: 'mid', text: 'Mid-Range ($100-$200)', icon: '💰💰' },
+            { id: 'economy', text: 'Basic ($50-$100)', icon: '💰' },
+            { id: 'mid', text: 'Standard ($100-$200)', icon: '💰💰' },
             { id: 'premium', text: 'Premium ($200+)', icon: '💰💰💰' }
         ]
     }
 ];
 
 const recommendations = {
-    'medical-heavy-advanced': {
-        title: 'Professional Medical Overbed Table',
+    // Medical use recommendations
+    'medical_height-tilt_premium': {
+        title: 'Premium Medical Overbed Table with Tilt',
+        description: 'Professional-grade overbed table with full tilt functionality, perfect for medical recovery',
         features: [
-            'Hospital-grade construction',
-            'Auto-locking casters',
-            'Heavy-duty weight capacity (100 lbs)',
-            'Side guards for added safety',
-            'Easy-clean antimicrobial surface'
-        ],
-        safetyFeatures: [
-            'Auto-locking brake system',
-            'Anti-tip design',
-            'Rounded corners for safety',
-            'Non-slip surface coating'
+            'Medical-grade construction',
+            'Smooth height adjustment',
+            'Full tilt-top functionality',
+            'Heavy-duty casters with locks'
         ],
         price: '$249.99',
-        image: '/assets/images/products/medical-premium.jpg'
+        affiliateLink: 'https://shareasale.com/r.cfm?b=2278&u=1520322&m=942&urllink=www%2Ethewrightstuff%2Ecom%2Fadaptive%2Doverbed%2Dtables%2Ehtml&afftrack=guide_medical_premium'
     },
-    'elderly-locking-basic': {
-        title: 'Senior-Friendly Overbed Table',
+    'medical_height-tilt_mid': {
+        title: 'Standard Medical Overbed Table',
+        description: 'Reliable overbed table with essential features for recovery',
         features: [
-            'Easy-grip height adjustment',
-            'Locking caster wheels',
-            'Standard weight capacity (50 lbs)',
-            'Large ergonomic handle'
+            'Height adjustment mechanism',
+            'Partial tilt functionality',
+            'Stable base with casters',
+            'Easy-clean surface'
         ],
-        safetyFeatures: [
-            'High-visibility safety markers',
-            'Stable four-point base',
-            'Easy-lock wheel system',
-            'Smooth edge design'
-        ],
-        price: '$179.99',
-        image: '/assets/images/products/elderly-friendly.jpg'
+        price: '$169.99',
+        affiliateLink: 'https://shareasale.com/r.cfm?b=2278&u=1520322&m=942&urllink=www%2Ethewrightstuff%2Ecom%2Fstandard%2Doverbed%2Dtable%2Ehtml&afftrack=guide_medical_mid'
     },
-    'work-standard-basic': {
-        title: 'Ergonomic Work Station Table',
+    
+    // Elderly care recommendations
+    'elderly_stability_premium': {
+        title: 'Premium Stability-Focused Overbed Table',
+        description: 'Extra-stable overbed table designed for elderly care',
         features: [
-            'Adjustable tilt top',
+            'Enhanced stability system',
+            'Auto-locking casters',
+            'Extra-wide base',
+            'One-touch height adjustment'
+        ],
+        price: '$229.99',
+        affiliateLink: 'https://shareasale.com/r.cfm?b=2278&u=1520322&m=942&urllink=www%2Ethewrightstuff%2Ecom%2Fdeluxe%2Doverbed%2Dtable%2Ehtml&afftrack=guide_elderly_premium'
+    },
+    'elderly_stability_mid': {
+        title: 'Standard Elderly Care Table',
+        description: 'Stable and reliable overbed table for daily use',
+        features: [
+            'Locking casters',
+            'Sturdy construction',
+            'Simple height adjustment',
+            'Non-slip surface'
+        ],
+        price: '$149.99',
+        affiliateLink: 'https://shareasale.com/r.cfm?b=2278&u=1520322&m=942&urllink=www%2Ethewrightstuff%2Ecom%2Fstandard%2Doverbed%2Dtable%2Ehtml&afftrack=guide_elderly_mid'
+    },
+
+    // Work/Study recommendations
+    'work_storage_premium': {
+        title: 'Premium Work Station Overbed Table',
+        description: 'Professional overbed table with ample storage for work materials',
+        features: [
+            'Multiple storage compartments',
             'Cable management system',
-            'Standard weight capacity',
-            'Built-in storage'
+            'Large work surface',
+            'Ergonomic design'
         ],
-        safetyFeatures: [
-            'Cable organization system',
-            'Stability cross-bars',
-            'Non-slip surface',
-            'Weight distribution indicators'
+        price: '$219.99',
+        affiliateLink: 'https://shareasale.com/r.cfm?b=2278&u=1520322&m=942&urllink=www%2Ethewrightstuff%2Ecom%2Fdeluxe%2Dtilt%2Dtop%2Doverbed%2Dtable%2Ehtml&afftrack=guide_work_premium'
+    },
+    'work_storage_mid': {
+        title: 'Standard Work Surface Table',
+        description: 'Practical overbed table for work and study',
+        features: [
+            'Side storage pocket',
+            'Spacious work area',
+            'Height adjustment',
+            'Stable platform'
         ],
         price: '$159.99',
-        image: '/assets/images/products/work-station.jpg'
-    }
-};
-
-const scenarios = {
-    'medical-recovery': {
-        title: 'Post-Surgery Recovery',
-        description: 'Ideal for patients recovering from surgery or medical procedures',
-        requirements: [
-            'Easy height adjustment for nurse access',
-            'Stable base for medical equipment',
-            'Smooth-rolling casters for mobility',
-            'Easy-clean surfaces for hygiene'
-        ],
-        recommendedFeatures: [
-            'Auto-locking wheels',
-            'Side rails for safety',
-            'Spill-proof surface',
-            'Height adjustment range: 28-45 inches'
-        ]
-    },
-    'long-term-care': {
-        title: 'Long-term Bed Care',
-        description: 'Perfect for individuals requiring extended bed rest or long-term care',
-        requirements: [
-            'Durable construction for daily use',
-            'Multiple surface angles for various activities',
-            'Extra storage for medical supplies',
-            'Enhanced stability features'
-        ],
-        recommendedFeatures: [
-            'Split-top design',
-            'Built-in storage drawers',
-            'Heavy-duty frame',
-            'Weight capacity: 100+ lbs'
-        ]
-    },
-    'work-study': {
-        title: 'Work/Study From Bed',
-        description: 'Designed for professionals and students working remotely from bed',
-        requirements: [
-            'Ergonomic positioning for laptops',
-            'Cable management system',
-            'Adequate workspace',
-            'Tilt adjustment for screens'
-        ],
-        recommendedFeatures: [
-            'Large work surface',
-            'USB ports and power options',
-            'Adjustable tilt top',
-            'Cooling pad compatibility'
-        ]
-    },
-    'elderly-care': {
-        title: 'Elderly Care',
-        description: 'Specialized features for senior comfort and safety',
-        requirements: [
-            'Simple, intuitive controls',
-            'Enhanced stability',
-            'Easy-grip handles',
-            'Visual safety markers'
-        ],
-        recommendedFeatures: [
-            'One-touch height adjustment',
-            'Extra-wide base',
-            'High-contrast safety features',
-            'Rounded edges for safety'
-        ]
-    },
-    'bariatric-use': {
-        title: 'Bariatric Care',
-        description: 'Heavy-duty solutions for bariatric patients',
-        requirements: [
-            'Reinforced frame construction',
-            'Extra-wide surface area',
-            'Enhanced weight capacity',
-            'Stability at extended reach'
-        ],
-        recommendedFeatures: [
-            'Weight capacity: 500+ lbs',
-            'Wider base for stability',
-            'Heavy-duty casters',
-            'Reinforced height adjustment'
-        ]
+        affiliateLink: 'https://shareasale.com/r.cfm?b=2278&u=1520322&m=942&urllink=www%2Ethewrightstuff%2Ecom%2Fstandard%2Doverbed%2Dtable%2Ehtml&afftrack=guide_work_mid'
     }
 };
 
@@ -208,55 +129,38 @@ function init() {
 // Show Question
 function showQuestion(index) {
     const question = questions[index];
-    questionContainer.innerHTML = `
+    const questionHTML = `
         <div class="question">
             <h3>${question.title}</h3>
             <div class="options">
                 ${question.options.map(option => `
-                    <div class="option" data-id="${option.id}">
-                        <span class="icon">${option.icon}</span>
-                        ${option.text}
+                    <div class="option" data-id="${option.id}" onclick="selectOption(this)">
+                        <span class="option-icon">${option.icon}</span>
+                        <span class="option-text">${option.text}</span>
                     </div>
                 `).join('')}
             </div>
         </div>
     `;
-
-    // Add event listeners to options
-    const options = questionContainer.querySelectorAll('.option');
-    options.forEach(option => {
-        option.addEventListener('click', () => selectOption(option, question.multiple));
-    });
-
-    // Update buttons
-    prevButton.style.display = index === 0 ? 'none' : 'block';
-    nextButton.textContent = index === questions.length - 1 ? 'See Results' : 'Next';
+    questionContainer.innerHTML = questionHTML;
 }
 
 // Select Option
-function selectOption(option, multiple = false) {
+function selectOption(option) {
     const questionId = questions[currentQuestionIndex].id;
-    
-    if (!multiple) {
-        // Single selection
-        option.parentElement.querySelectorAll('.option').forEach(opt => {
-            opt.classList.remove('selected');
-        });
-        option.classList.add('selected');
-        answers[questionId] = option.dataset.id;
-    } else {
-        // Multiple selection
-        option.classList.toggle('selected');
-        answers[questionId] = Array.from(option.parentElement.querySelectorAll('.option.selected'))
-            .map(opt => opt.dataset.id);
-    }
+    option.parentElement.querySelectorAll('.option').forEach(opt => {
+        opt.classList.remove('selected');
+    });
+    option.classList.add('selected');
+    answers[questionId] = option.dataset.id;
 }
 
 // Update Progress
 function updateProgress() {
-    const progress = (currentQuestionIndex / questions.length) * 100;
+    const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
     progressBar.style.width = `${progress}%`;
     
+    // Update step indicators
     document.querySelectorAll('.step').forEach((step, index) => {
         if (index <= currentQuestionIndex) {
             step.classList.add('active');
@@ -268,10 +172,19 @@ function updateProgress() {
 
 // Navigation
 nextButton.addEventListener('click', () => {
+    const selectedOption = questionContainer.querySelector('.option.selected');
+    if (!selectedOption) {
+        alert('Please select an option to continue');
+        return;
+    }
+
     if (currentQuestionIndex < questions.length - 1) {
         currentQuestionIndex++;
         showQuestion(currentQuestionIndex);
         updateProgress();
+        if (currentQuestionIndex > 0) {
+            prevButton.style.display = 'block';
+        }
     } else {
         showResults();
     }
@@ -282,6 +195,9 @@ prevButton.addEventListener('click', () => {
         currentQuestionIndex--;
         showQuestion(currentQuestionIndex);
         updateProgress();
+        if (currentQuestionIndex === 0) {
+            prevButton.style.display = 'none';
+        }
     }
 });
 
@@ -290,129 +206,29 @@ function showResults() {
     document.getElementById('decision-tree').style.display = 'none';
     resultsSection.style.display = 'block';
 
-    // Get recommended products and relevant scenarios
-    const recommendedProducts = getRecommendations(answers);
-    const relevantScenarios = getRelevantScenarios(answers);
-    
-    // Display scenarios first
-    const scenariosHTML = `
-        <div class="scenarios-section">
-            <h2>Recommended Use Cases</h2>
-            <div class="scenarios-grid">
-                ${relevantScenarios.map(scenario => `
-                    <div class="scenario-card">
-                        <h3>${scenario.title}</h3>
-                        <p class="scenario-description">${scenario.description}</p>
-                        <div class="requirements">
-                            <h4>Key Requirements</h4>
-                            <ul>
-                                ${scenario.requirements.map(req => `<li>${req}</li>`).join('')}
-                            </ul>
-                        </div>
-                        <div class="recommended-features">
-                            <h4>Recommended Features</h4>
-                            <ul>
-                                ${scenario.recommendedFeatures.map(feat => `<li>${feat}</li>`).join('')}
-                            </ul>
-                        </div>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
+    // Get recommendation key based on answers
+    const recommendationKey = `${answers['primary-use']}_${answers['features']}_${answers['budget']}`;
+    const recommendation = recommendations[recommendationKey] || recommendations[`${answers['primary-use']}_${answers['features']}_mid`];
 
-        <div class="amazon-cta-section">
-            <div class="amazon-cta-content">
-                <h2>Ready to Find Your Perfect Overbed Table?</h2>
-                <p>Browse our curated selection of top-rated overbed tables on Amazon</p>
-                <div class="cta-features">
-                    <div class="cta-feature">
-                        <span class="feature-icon">✓</span>
-                        <span>Verified Reviews</span>
-                    </div>
-                    <div class="cta-feature">
-                        <span class="feature-icon">🚚</span>
-                        <span>Fast Prime Shipping</span>
-                    </div>
-                    <div class="cta-feature">
-                        <span class="feature-icon">💰</span>
-                        <span>Competitive Prices</span>
-                    </div>
-                </div>
-                <a href="https://amzn.to/4grgJqD" class="btn btn-amazon" target="_blank" rel="noopener noreferrer">
-                    <img src="/assets/images/amazon-logo.svg" alt="Amazon" class="amazon-logo">
-                    Shop on Amazon
-                </a>
+    const resultsHTML = `
+        <div class="recommendation-card">
+            <h2>${recommendation.title}</h2>
+            <p class="description">${recommendation.description}</p>
+            <div class="features-list">
+                <h3>Key Features:</h3>
+                <ul>
+                    ${recommendation.features.map(feature => `<li>${feature}</li>`).join('')}
+                </ul>
             </div>
+            <div class="price">${recommendation.price}</div>
+            <a href="${recommendation.affiliateLink}" class="cta-button primary" target="_blank" rel="nofollow sponsored">
+                View on The Wright Stuff <span class="arrow">→</span>
+            </a>
+            <p class="disclaimer">*As an affiliate, we earn from qualifying purchases</p>
         </div>
     `;
 
-    // Display product recommendations
-    const productsHTML = `
-        <div class="products-section">
-            <h2>Recommended Products</h2>
-            <div class="recommendations">
-                ${recommendedProducts.map(product => `
-                    <div class="recommendation-card">
-                        <img src="${product.image}" alt="${product.title}">
-                        <h3>${product.title}</h3>
-                        <ul class="features">
-                            ${product.features.map(feature => `<li>${feature}</li>`).join('')}
-                        </ul>
-                        <ul class="safety-features">
-                            ${product.safetyFeatures.map(feature => `<li>${feature}</li>`).join('')}
-                        </ul>
-                        <div class="price">${product.price}</div>
-                        <a href="#" class="btn btn-primary">Learn More</a>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-    `;
-
-    // Update the results container
-    recommendationsContainer.innerHTML = scenariosHTML + productsHTML;
-}
-
-// Function to get relevant scenarios based on user answers
-function getRelevantScenarios(answers) {
-    const use = answers['primary-use'];
-    const weightCapacity = answers['weight-capacity'];
-    
-    let relevantScenarios = [];
-    
-    // Add primary scenario based on use
-    switch(use) {
-        case 'medical':
-            relevantScenarios.push(scenarios['medical-recovery']);
-            relevantScenarios.push(scenarios['long-term-care']);
-            break;
-        case 'work':
-            relevantScenarios.push(scenarios['work-study']);
-            break;
-        case 'elderly':
-            relevantScenarios.push(scenarios['elderly-care']);
-            break;
-    }
-
-    // Add bariatric scenario if heavy weight capacity is selected
-    if (weightCapacity === 'bariatric') {
-        relevantScenarios.push(scenarios['bariatric-use']);
-    }
-
-    return relevantScenarios;
-}
-
-// Get Recommendations based on answers
-function getRecommendations(answers) {
-    // Simple recommendation logic - can be expanded based on needs
-    const use = answers['primary-use'];
-    const weightCapacity = answers['weight-capacity'];
-    const stability = answers['stability'];
-    const features = answers['features'] || [];
-    const budget = answers['budget'];
-
-    // For now, return all recommendations (this should be replaced with actual logic)
-    return Object.values(recommendations);
+    recommendationsContainer.innerHTML = resultsHTML;
 }
 
 // Initialize the decision tree
