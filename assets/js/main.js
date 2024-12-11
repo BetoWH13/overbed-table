@@ -23,4 +23,24 @@ document.addEventListener('DOMContentLoaded', function() {
             menuButton.classList.remove('active');
         }
     });
+
+    // Quick Navigation Shrink Effect
+    const quickNav = document.querySelector('.quick-nav');
+    if (quickNav) {
+        let lastScrollTop = 0;
+        const SCROLL_THRESHOLD = 200; // Adjust this value to control when shrinking starts
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Add or remove shrink class based on scroll position
+            if (scrollTop > SCROLL_THRESHOLD) {
+                quickNav.classList.add('shrink');
+            } else {
+                quickNav.classList.remove('shrink');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    }
 });

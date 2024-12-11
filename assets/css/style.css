@@ -721,3 +721,117 @@ footer {
         display: none;
     }
 }
+
+/* Quick Navigation Menu */
+.quick-nav {
+    position: sticky;
+    top: 80px; /* Adjust based on your header height */
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.quick-nav.shrink {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    max-height: 300px;
+    opacity: 0.85;
+}
+
+.quick-nav.shrink:hover {
+    opacity: 1;
+}
+
+.quick-nav h3 {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.quick-nav.shrink h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.quick-nav ul {
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.quick-nav li {
+    margin-bottom: 0.75rem;
+    padding-left: 0;
+    transition: all 0.3s ease;
+}
+
+.quick-nav.shrink li {
+    margin-bottom: 0.4rem;
+}
+
+.quick-nav li::before {
+    display: none;
+}
+
+.quick-nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 0.25rem 0;
+}
+
+.quick-nav.shrink a {
+    font-size: 0.85rem;
+    padding: 0.15rem 0;
+}
+
+.quick-nav a:hover {
+    color: var(--secondary-color);
+    padding-left: 0.5rem;
+}
+
+.quick-nav a.active {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* Scrollbar styling for quick navigation */
+.quick-nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+.quick-nav::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 3px;
+}
+
+.quick-nav::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 3px;
+}
+
+/* Responsive adjustments for quick navigation */
+@media (max-width: 768px) {
+    .quick-nav, .quick-nav.shrink {
+        position: relative;
+        top: 0;
+        max-height: none;
+        margin: 1rem 0;
+        font-size: initial;
+        padding: 1rem;
+        opacity: 1;
+    }
+    
+    .quick-nav.shrink h3,
+    .quick-nav.shrink a {
+        font-size: initial;
+    }
+}
