@@ -2,6 +2,12 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /private/
+Disallow: /assets/css/
+Disallow: /assets/js/
+Allow: /assets/images/
+
+# Crawl-delay
+Crawl-delay: 10
 
 # Sitemaps
 Sitemap: https://www.overbed-table.com/sitemap.xml

@@ -19,6 +19,24 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.overbed-table.com/infographics/</loc>
+        <lastmod>2024-12-11</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://www.overbed-table.com/infographics/top-5-features</loc>
+        <lastmod>2024-12-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.overbed-table.com/infographics/user-needs</loc>
+        <lastmod>2024-12-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://www.overbed-table.com/blog/</loc>
         <lastmod>2024-12-11</lastmod>
         <changefreq>weekly</changefreq>
