@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive guide to help you choose the perfect overbed table based on your specific needs">
+    <title>Overbed Table Buying Guide - Find Your Perfect Match</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/decision-tree.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/images/logo.svg" alt="Overbed Table Guide" width="200" height="50">
+                </a>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/infographics">Infographics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="buying-guide-hero">
+            <div class="container">
+                <h1>Find Your Perfect Overbed Table</h1>
+                <p>Answer a few simple questions to get personalized recommendations</p>
+            </div>
+        </section>
+
+        <section class="decision-tree" id="decision-tree">
+            <div class="container">
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                    <div class="step active">Start</div>
+                    <div class="step">Usage</div>
+                    <div class="step">Features</div>
+                    <div class="step">Budget</div>
+                    <div class="step">Results</div>
+                </div>
+
+                <div class="question-container" id="question-container">
+                    <!-- Questions will be dynamically loaded here -->
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="btn btn-secondary" id="prevBtn" style="display: none;">Previous</button>
+                    <button class="btn btn-primary" id="nextBtn">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section" id="results-section" style="display: none;">
+            <div class="container">
+                <h2>Your Recommended Overbed Tables</h2>
+                <div class="recommendations" id="recommendations">
+                    <!-- Recommendations will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Overbed Table Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/decision-tree.js"></script>
+</body>
+</html>
