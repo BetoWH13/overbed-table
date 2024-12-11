@@ -1,0 +1,163 @@
+/* Blog Styles */
+.blog-post {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.post-header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.post-meta {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.post-meta time,
+.post-meta .category {
+    margin: 0 0.5rem;
+}
+
+.post-excerpt {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #444;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Table of Contents */
+.table-of-contents {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.table-of-contents h2 {
+    margin-top: 0;
+}
+
+.table-of-contents ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.table-of-contents li {
+    margin: 0.5rem 0;
+}
+
+.table-of-contents a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.table-of-contents a:hover {
+    color: #007bff;
+}
+
+/* Post Content */
+.post-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.post-body h2 {
+    margin: 3rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+.post-body h3 {
+    margin: 2rem 0 1rem;
+    color: #333;
+}
+
+.post-body ul,
+.post-body ol {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+}
+
+.post-body li {
+    margin: 0.5rem 0;
+}
+
+/* Types Grid */
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.type-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Product Recommendations */
+.product-recommendations {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.affiliate-disclaimer {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Conclusion */
+.conclusion {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .blog-post {
+        padding: 1rem;
+    }
+    
+    .post-header {
+        margin-bottom: 2rem;
+    }
+    
+    .post-excerpt {
+        font-size: 1.1rem;
+    }
+    
+    .types-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .post-content {
+        font-size: 12pt;
+    }
+    
+    .table-of-contents,
+    .product-recommendations {
+        break-inside: avoid;
+    }
+}
