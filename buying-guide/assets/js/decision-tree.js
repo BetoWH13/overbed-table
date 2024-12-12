@@ -41,7 +41,7 @@ const recommendations = {
             'Heavy-duty casters with locks'
         ],
         price: '$249.99',
-        affiliateLink: 'https://shareasale.com/r.cfm?b=2278&u=1520322&m=942&urllink=www%2Ethewrightstuff%2Ecom%2Fadaptive%2Doverbed%2Dtables%2Ehtml&afftrack=guide_medical_premium'
+        affiliateLink: 'https://amzn.to/4grgJqD'
     },
     'medical_height-tilt_mid': {
         title: 'Standard Medical Overbed Table',
@@ -53,7 +53,7 @@ const recommendations = {
             'Easy-clean surface'
         ],
         price: '$169.99',
-        affiliateLink: 'https://shareasale.com/r.cfm?b=2278&u=1520322&m=942&urllink=www%2Ethewrightstuff%2Ecom%2Fstandard%2Doverbed%2Dtable%2Ehtml&afftrack=guide_medical_mid'
+        affiliateLink: 'https://amzn.to/4grgJqD'
     },
     
     // Elderly care recommendations
@@ -67,7 +67,7 @@ const recommendations = {
             'One-touch height adjustment'
         ],
         price: '$229.99',
-        affiliateLink: 'https://shareasale.com/r.cfm?b=2278&u=1520322&m=942&urllink=www%2Ethewrightstuff%2Ecom%2Fdeluxe%2Doverbed%2Dtable%2Ehtml&afftrack=guide_elderly_premium'
+        affiliateLink: 'https://amzn.to/4grgJqD'
     },
     'elderly_stability_mid': {
         title: 'Standard Elderly Care Table',
@@ -79,7 +79,7 @@ const recommendations = {
             'Non-slip surface'
         ],
         price: '$149.99',
-        affiliateLink: 'https://shareasale.com/r.cfm?b=2278&u=1520322&m=942&urllink=www%2Ethewrightstuff%2Ecom%2Fstandard%2Doverbed%2Dtable%2Ehtml&afftrack=guide_elderly_mid'
+        affiliateLink: 'https://amzn.to/4grgJqD'
     },
 
     // Work/Study recommendations
@@ -93,7 +93,7 @@ const recommendations = {
             'Ergonomic design'
         ],
         price: '$219.99',
-        affiliateLink: 'https://shareasale.com/r.cfm?b=2278&u=1520322&m=942&urllink=www%2Ethewrightstuff%2Ecom%2Fdeluxe%2Dtilt%2Dtop%2Doverbed%2Dtable%2Ehtml&afftrack=guide_work_premium'
+        affiliateLink: 'https://amzn.to/4grgJqD'
     },
     'work_storage_mid': {
         title: 'Standard Work Surface Table',
@@ -105,7 +105,7 @@ const recommendations = {
             'Stable platform'
         ],
         price: '$159.99',
-        affiliateLink: 'https://shareasale.com/r.cfm?b=2278&u=1520322&m=942&urllink=www%2Ethewrightstuff%2Ecom%2Fstandard%2Doverbed%2Dtable%2Ehtml&afftrack=guide_work_mid'
+        affiliateLink: 'https://amzn.to/4grgJqD'
     }
 };
 
@@ -222,7 +222,7 @@ function showResults() {
             </div>
             <div class="price">${recommendation.price}</div>
             <a href="${recommendation.affiliateLink}" class="cta-button primary" target="_blank" rel="nofollow sponsored">
-                View on The Wright Stuff <span class="arrow">→</span>
+                View on Amazon <span class="arrow">→</span>
             </a>
             <p class="disclaimer">*As an affiliate, we earn from qualifying purchases</p>
         </div>
