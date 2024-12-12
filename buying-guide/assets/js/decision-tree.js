@@ -118,12 +118,16 @@ const resultsSection = document.getElementById('results-section');
 const recommendationsContainer = document.getElementById('recommendations');
 
 let currentQuestionIndex = 0;
-let answers = {};
+let userAnswers = {};
 
 // Initialize
 function init() {
+    currentQuestionIndex = 0;
+    userAnswers = {};
     showQuestion(currentQuestionIndex);
     updateProgress();
+    resultsSection.style.display = 'none';
+    document.getElementById('decision-tree').style.display = 'block';
 }
 
 // Show Question
@@ -143,16 +147,31 @@ function showQuestion(index) {
         </div>
     `;
     questionContainer.innerHTML = questionHTML;
+
+    // Restore previous answer if it exists
+    if (userAnswers[question.id]) {
+        const selectedOption = questionContainer.querySelector(`[data-id="${userAnswers[question.id]}"]`);
+        if (selectedOption) {
+            selectedOption.classList.add('selected');
+        }
+    }
 }
 
 // Select Option
-function selectOption(option) {
+function selectOption(optionElement) {
     const questionId = questions[currentQuestionIndex].id;
-    option.parentElement.querySelectorAll('.option').forEach(opt => {
+    const optionId = optionElement.dataset.id;
+    
+    // Remove selection from other options
+    optionElement.parentElement.querySelectorAll('.option').forEach(opt => {
         opt.classList.remove('selected');
     });
-    option.classList.add('selected');
-    answers[questionId] = option.dataset.id;
+    
+    // Add selection to clicked option
+    optionElement.classList.add('selected');
+    
+    // Store the answer
+    userAnswers[questionId] = optionId;
 }
 
 // Update Progress
@@ -182,9 +201,7 @@ nextButton.addEventListener('click', () => {
         currentQuestionIndex++;
         showQuestion(currentQuestionIndex);
         updateProgress();
-        if (currentQuestionIndex > 0) {
-            prevButton.style.display = 'block';
-        }
+        prevButton.style.display = 'block';
     } else {
         showResults();
     }
@@ -195,20 +212,40 @@ prevButton.addEventListener('click', () => {
         currentQuestionIndex--;
         showQuestion(currentQuestionIndex);
         updateProgress();
-        if (currentQuestionIndex === 0) {
-            prevButton.style.display = 'none';
-        }
+        prevButton.style.display = currentQuestionIndex === 0 ? 'none' : 'block';
     }
 });
 
 // Show Results
 function showResults() {
+    // Hide questions, show results
     document.getElementById('decision-tree').style.display = 'none';
     resultsSection.style.display = 'block';
 
-    // Get recommendation key based on answers
-    const recommendationKey = `${answers['primary-use']}_${answers['features']}_${answers['budget']}`;
-    const recommendation = recommendations[recommendationKey] || recommendations[`${answers['primary-use']}_${answers['features']}_mid`];
+    // Build recommendation key based on answers
+    const useCase = userAnswers['primary-use'];
+    const feature = userAnswers['features'];
+    const budget = userAnswers['budget'];
+
+    // Create the recommendation key
+    let recommendationKey = `${useCase}_${feature}_${budget}`;
+    
+    // If exact match not found, fall back to mid-range option
+    let recommendation = recommendations[recommendationKey];
+    if (!recommendation) {
+        recommendationKey = `${useCase}_${feature}_mid`;
+        recommendation = recommendations[recommendationKey];
+    }
+
+    // If still no recommendation, use a default one based on use case
+    if (!recommendation) {
+        recommendationKey = `${useCase}_storage_mid`;
+        recommendation = recommendations[recommendationKey];
+    }
+
+    console.log('User Answers:', userAnswers);
+    console.log('Recommendation Key:', recommendationKey);
+    console.log('Recommendation:', recommendation);
 
     const resultsHTML = `
         <div class="recommendation-card">
