@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Optimize your overbed table setup with our ergonomic planner tool.">
+    <meta name="keywords" content="ergonomic setup, overbed table, productivity, comfort">
+    <title>Ergonomic Setup Planner - Overbed Table Guide</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/tools/ergonomic-planner/assets/css/planner.css">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Ergonomic Setup Planner",
+        "description": "Interactive tool to optimize your overbed table setup for comfort and productivity",
+        "url": "https://www.overbed-table.com/tools/ergonomic-planner/",
+        "applicationCategory": "UtilityApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/images/logo.svg" alt="overbed-table.com" width="200" height="50">
+                </a>
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/buying-guide">Buying Guide</a></li>
+                <li><a href="/infographics">Infographics</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="planner-container">
+            <section class="tool-header">
+                <h1>Ergonomic Setup Planner</h1>
+                <p>Optimize your overbed table for comfort and productivity. Answer a few questions to get started!</p>
+            </section>
+
+            <section class="planner-form">
+                <!-- Step 1: Activity Type -->
+                <div class="step">
+                    <label for="activity">Step 1: What will you use the table for?</label>
+                    <select id="activity">
+                        <option value="">-- Select an activity --</option>
+                        <option value="working">Working</option>
+                        <option value="eating">Eating/Drinking</option>
+                        <option value="reading">Reading/Leisure</option>
+                        <option value="crafting">Crafting/DIY</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Step 2: Device Weight -->
+                <div class="step">
+                    <label for="weight">Step 2: What is the typical weight of items on the table?</label>
+                    <select id="weight">
+                        <option value="">-- Select a weight range --</option>
+                        <option value="light">Light (e.g., books, snacks)</option>
+                        <option value="medium">Medium (e.g., laptop, food tray)</option>
+                        <option value="heavy">Heavy (e.g., monitor, crafting tools)</option>
+                    </select>
+                </div>
+
+                <!-- Step 3: Position -->
+                <div class="step">
+                    <label>Step 3: What is your position while using the table?</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="position" value="sitting"> Sitting</label>
+                        <label><input type="radio" name="position" value="lying"> Lying</label>
+                        <label><input type="radio" name="position" value="mixed"> Mixed</label>
+                    </div>
+                </div>
+
+                <!-- Step 4: Adjust Height -->
+                <div class="step">
+                    <label for="height">Step 4: Adjust the ideal table height (in inches):</label>
+                    <div class="height-control">
+                        <input type="range" id="height" min="20" max="40" value="28">
+                        <span id="height-value">28</span> inches
+                    </div>
+                </div>
+
+                <!-- Step 5: Lighting -->
+                <div class="step">
+                    <label for="lighting">Step 5: What are the lighting conditions?</label>
+                    <select id="lighting">
+                        <option value="">-- Select lighting conditions --</option>
+                        <option value="bright">Bright</option>
+                        <option value="dim">Dim</option>
+                        <option value="varied">Varies throughout the day</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button id="submit-btn" class="cta-button">Get Recommendations</button>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section" style="display: none;">
+                <h2>Your Optimal Setup</h2>
+                <ul id="recommendations"></ul>
+                
+                <!-- Product Recommendations -->
+                <div class="product-recommendations">
+                    <h3>Recommended Products</h3>
+                    <div class="product-cards" id="product-recommendations"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Overbed Table Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/tools/ergonomic-planner/assets/js/planner.js"></script>
+</body>
+</html>

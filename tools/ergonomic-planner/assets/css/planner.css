@@ -1,0 +1,266 @@
+/* Ergonomic Planner Specific Styles */
+.planner-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.tool-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.tool-header h1 {
+    color: var(--primary-color, #0073aa);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.tool-header p {
+    color: var(--text-color, #333);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.planner-form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.step {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.step:last-child {
+    border-bottom: none;
+}
+
+.step label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--heading-color, #2c3e50);
+    font-size: 1.1rem;
+}
+
+.step select {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.step select:focus {
+    border-color: var(--primary-color, #0073aa);
+    outline: none;
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    margin: 0;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.height-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+input[type="range"] {
+    flex: 1;
+    height: 2px;
+    background: #ddd;
+    border: none;
+    border-radius: 2px;
+    padding: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color, #0073aa);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#height-value {
+    font-weight: 600;
+    color: var(--primary-color, #0073aa);
+    min-width: 60px;
+}
+
+.results-section {
+    margin-top: 3rem;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.results-section h2 {
+    color: var(--primary-color, #0073aa);
+    margin-bottom: 1.5rem;
+}
+
+#recommendations {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#recommendations li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 4px;
+    border-left: 4px solid var(--primary-color, #0073aa);
+}
+
+.download-section {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Product Recommendations */
+.product-recommendations {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
+}
+
+.product-recommendations h3 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border: 1px solid #e1e1e1;
+    border-radius: 6px;
+}
+
+.product-card h4 {
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+}
+
+.product-card p {
+    color: #666;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.product-card .recommendation-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #e1f5fe;
+    color: #0288d1;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.product-card .cta-button {
+    display: inline-block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #0073aa;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.product-card .cta-button:hover {
+    background-color: #005177;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-recommendations {
+        padding: 1rem;
+    }
+    
+    .product-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .planner-container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .planner-form {
+        padding: 1.5rem;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+/* Responsive adjustments for product cards */
+@media (max-width: 768px) {
+    .product-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .product-card {
+        padding: 1.25rem;
+    }
+}
+
+/* Animation for Results */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#results {
+    animation: fadeIn 0.5s ease-out;
+}
