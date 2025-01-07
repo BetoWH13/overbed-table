@@ -53,7 +53,7 @@ const RECOMMENDATIONS = {
         standard: {
             title: "Best-Selling Overbed Table",
             description: "Versatile and reliable overbed table perfect for daily use. Features smooth height adjustment and stable design.",
-            link: "https://amzn.to/4j4QgkM",
+            link: "https://shrsl.com/4s78c",
             tags: {
                 eating: "Ideal for meals",
                 reading: "Perfect for reading",
@@ -66,7 +66,7 @@ const RECOMMENDATIONS = {
         heavyDuty: {
             title: "Heavy-Duty Overbed Table",
             description: "Extra sturdy construction with enhanced stability. Perfect for intensive use and heavier items.",
-            link: "https://amzn.to/3DKPAkn",
+            link: "https://shrsl.com/4s78c",
             tags: {
                 crafting: "Perfect for crafting",
                 working: "Ideal for workstation",
