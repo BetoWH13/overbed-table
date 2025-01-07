@@ -67,7 +67,7 @@ const recommendations = {
             'One-touch height adjustment'
         ],
         price: '$229.99',
-        affiliateLink: 'https://amzn.to/4grgJqD'
+        affiliateLink: 'https://shrsl.com/4s78c'
     },
     'elderly_stability_mid': {
         title: 'Standard Elderly Care Table',
@@ -79,7 +79,7 @@ const recommendations = {
             'Non-slip surface'
         ],
         price: '$149.99',
-        affiliateLink: 'https://amzn.to/4grgJqD'
+        affiliateLink: 'https://shrsl.com/4s78c'
     },
 
     // Work/Study recommendations
@@ -105,7 +105,7 @@ const recommendations = {
             'Stable platform'
         ],
         price: '$159.99',
-        affiliateLink: 'https://amzn.to/4grgJqD'
+        affiliateLink: 'https://shrsl.com/4s78c'
     }
 };
 
